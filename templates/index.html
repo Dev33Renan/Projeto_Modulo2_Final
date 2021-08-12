@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/styles.css" />
+    <!-- <link rel="stylesheet" href="../static/css/login.css" /> -->
+    <title>Agrotech</title>
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <a href="#" class="logo"><img src="../static/img/logo.png" /></a>
+        <h1>Agrotech</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/time" class="link">Desenvolvedores</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section id="sobre">
+          <h2>O <span class="futuro">Futuro</span> dos Alimentos</h2>
+          <h3>Tecnologia, sustentabilidade e mais saúde</h3>
+          <p>Este é um catalogo sobre produtos orgânico e vegano.</p>
+      </section>
+
+      <section id="area">
+        <div>
+          <h3>Acesse nosso catalogo</h3>
+          <a href="/catalogo"><button>Acessar</button></a>
+        </div>
+
+
+        <p>Ou faça login para alterar o catálogo</p>
+
+
+
+        <div id="login">
+          <h3>LOGIN</h3>
+          <form method="POST" action="/login">
+            <input type="email" placeholder="E-mail" name="email">
+            <span class="login__input-border"></span>
+            <input type="password" placeholder="Senha" name="password">
+            <span class="login__input-border"></span>
+            <div class="btn">
+              <button>Login</button>
+              <div class="btn-cadastrar">
+                <a href="/cadastro">Cadastrar</a>
+              </div>
+            </div>
+            {% if get_flashed_messages() %}
+            <p>{{ get_flashed_messages()[0] }}</p>
+            {% endif %}
+          </form>
+        </div>
+      </section>
+
+      
+    </main>
+  </body>
+</html>
